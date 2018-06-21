@@ -1,0 +1,180 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input, textarea {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	font-family: signika, sans-serif;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    margin: 0;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a 
+{
+   text-decoration: none;  
+   color: white;
+}
+a:hover
+{
+  color: #FFBC42;
+}
+/*header*/
+.main_title 
+{
+    text-align: center;
+    font-size: 2em;
+}
+.main_navbar
+{
+  top: 0;
+  z-index: 3;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  background: #005f6b;
+  border-radius: 1em;
+}
+/* menu */
+.main_navbar-all
+{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  font-size: 2em;
+  color: white;
+  margin: auto;
+  
+}
+.main_navbar-all_element
+{
+	display: flex;
+  margin: 5px;
+  padding: 0px 20px 10px 20px;
+}
+
+h1, h3
+{
+    text-align:center;
+}
+h3
+{
+    background-color:black;
+    color:white;
+    font-size:0.9em;
+    margin-bottom:0px;
+}
+.news p
+{
+    background-color:#CCCCCC;
+    margin-top:0px;
+}
+.news
+{
+    width:70%;
+    margin:auto;
+}
+
+
+
+.registration_connection__form, .adminPass_form
+{
+  position: absolute;
+  border: none;
+  background-color: #E8F6FA;
+  padding: 12px 12px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.registration_connection__form input, .adminPass_form input
+{
+	  width: 100%;
+    border: 1px solid lightgrey;
+    padding: 5px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    opacity: 0.8;
+}
+.sendmessage
+{
+    color: white;
+	  background-color: #05AFE8;
+}
+
+/*footer*/
+footer {  
+    position: relative;
+    padding-top: 2em;
+    margin-top: 271px;
+    background: rgb(45, 49, 49);
+    height: 170px;
+    font-size: 1.4em;
+  }
+.deconnection {
+    position: absolute;
+    padding-left: 170px;
+    left: 0;
+    width: 50%;
+    color: white;
+}
+.navigation {
+    position: absolute;
+    width: 50%;
+    right: 0;
+    color: white;
+}
+
+textarea {
+    border: solid;
+}
+
+.post_connection__form, .post_article__form {
+    position: relative;
+    border: none;
+    background-color: #E8F6FA;
+    padding: 12px 12px 10px 12px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+
+
