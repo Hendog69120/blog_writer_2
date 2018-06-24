@@ -1,5 +1,5 @@
 <?php
-
+//déplacer ce code pour le mettre dans l'index !!!!!
 function connect() {
     session_start();
 
