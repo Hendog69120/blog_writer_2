@@ -49,21 +49,22 @@ class PostManager
         return $req;
     }
 
-    public function removePost($postId) 
+    public function deletePost($postId) 
     {
         $req = $this->db->prepare('DELETE FROM post WHERE id = :id');
-        $req-> bindParam(':id', $postid);
+        $req-> bindParam(':id', $postId);
         $req->execute();
 
         return $req;
     }
 
-    public function updatePost($content, $postId)
+    public function updatePost($title, $content, $postId)
     {
-        $update = $this->db->prepare('UPDATE post SET content = :content WHERE id = :id');
+        $update = $this->db->prepare('UPDATE post SET title= :title, content = :content WHERE id = :id');
 
+        $update -> bindParam(':title', $title);
         $update -> bindParam(':content', $content);
-        $update -> bindParam(':id', $postid);
+        $update -> bindParam(':id', $postId);
         $update->execute();
         
 

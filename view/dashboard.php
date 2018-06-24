@@ -18,6 +18,12 @@
 <?php foreach ($data as $post): ?>
     <div class="news">
         <h3>
+            <form method="post">
+                <input type="checkbox" name="post_to_delete" value="<?= $post['id']; ?>">
+                <input type="submit" value="Supprimer le post">
+            
+                <a href="index.php?action=edit&id=<?= $post['id']; ?>">Modifier le post </a>
+            </form>
             <?= htmlspecialchars($post['title']); ?>
             <em>le <?= $post['date_creation_fr']; ?></em>
         </h3>
@@ -33,6 +39,7 @@
 <div id="comment_signalement">
 
     <?php foreach ($comments as $comment): ?>
+        
         <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['updated_at_fr'] ?></p>
         <p><?= nl2br(htmlspecialchars($comment['content'])) ?></p>
         <?php if ($comment['signalement'] == true): ?>
@@ -43,6 +50,9 @@
             <input type="submit" value="Supprimer le commentaire">
         </form>
     <?php endforeach; ?>
+</div>
+<div>
+    <p><a href="http://localhost/projet4_2/view/admin.php">Poster un article</a></p>
 </div>
 <?php include("view/footer.php"); ?>
 </body>

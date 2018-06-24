@@ -5,7 +5,8 @@ $credentials = require("model/credentials.php");
 
 define('APP_ROOT', __DIR__);
 define('BOOTSTRAP', $_SERVER['SCRIPT_NAME']);
-define('HOMEPAGE', $_SERVER["HTTP_HOST"].'/'.BOOTSTRAP);
+define('HOMEPAGE', $_SERVER["HTTP_HOST"].BOOTSTRAP);
+//var_dump(HOMEPAGE);die;
 
 require("model/MemberManager.php");
 require("model/FiveLast.php");
@@ -31,8 +32,33 @@ if (isset($_GET['billet']) && $_GET['billet'] > 0) {
 
     require('view/postView.php');
 
-} elseif (isset($_GET['action']) && $_GET['action'] == 'dashboard') {
+} elseif (isset($_GET['action']) && $_GET['action'] == 'edit') {
+    
+    if(isset($_SESSION['pseudo'])) {
+        //if(isset($_POST['title']) && isset($_POST['content']) && isset($_POST['post_id']) && !empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['post_id']) ) {
+            if (isset($_POST['title'])) {
+                
+            $updatePost = $postManager->updatePost($_POST['title'],$_POST['content'],$_POST['post_id']);
+            
+            if($updatePost) {
+                
+                header('Location: http://localhost/projet4_2/index.php?action=dashboard');
+                exit;
+            }
+        }
+        $post = $postManager->getPost($_GET['id']);
+        
+        require('view/edit.php');
+    }
+    
+}
+ elseif (isset($_GET['action']) && $_GET['action'] == 'dashboard') {
     if (isset($_SESSION['pseudo'])) {
+        //suppression post
+        if(isset($_POST['post_to_delete'])) {
+            $postManager->deletePost($_POST['post_to_delete']);
+            $_SESSION['post_deleted'] = "post Supprimé";
+        }
 
         if(isset($_POST['comment_to_delete'])) {
             $commentManager->deleteComment($_POST['comment_to_delete']);

@@ -25,14 +25,15 @@ if (($pseudo && $pass) != NULL)
         $_SESSION["connected"] = "Vous êtes bien connecté"; 
         $_SESSION["pseudo"] = $pseudo;
 
-        header("Location: http://localhost/projet4_2/index.php?action=dashboard");
+
+        header("Location: ../../index.php?action=dashboard");
         exit;
 
     } else {
         $_SESSION["error"] = "error !!!!!!!!!!!!"; 
             //redirection vers la page du formulaire
             
-    header("Location: http://localhost/projet4_2/view/connection.php");
+    header("Location: ../../view/connection.php");
     exit;
     }
 }
