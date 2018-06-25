@@ -8,12 +8,13 @@
     <link href="style.css" rel="stylesheet" /> 
 </head>
 <body>
-
+    <?= require('header.php'); ?>
+    
     <h1>Espace administrateur</h1>
            <div class="post_article__form">
             <h2>Article à poster</h2>
         
-            <form method="post" action="../index.php" >
+            <form method="post" >
             <p>
             <label for="title">Nom de l'article</label>
             <input type="text" name='title' id="title">
