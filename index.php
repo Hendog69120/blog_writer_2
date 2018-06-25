@@ -32,7 +32,24 @@ if (isset($_GET['billet']) && $_GET['billet'] > 0) {
 
     require('view/postView.php');
 
-} elseif (isset($_GET['action']) && $_GET['action'] == 'edit') {
+}   elseif (isset($_GET['action']) && $_GET['action'] == 'addPost') {
+
+    if (isset($_SESSION['pseudo'])) {
+       
+            if (isset($_POST['title']) && isset($_POST['content'])) {
+            //var_dump($_SESSION);die;
+            $addPost = $postManager->addPost($_POST['title'],$_POST['content']);
+
+                if ($addPost) {
+                    header('Location: http://localhost/projet4_2/index.php?action=dashboard');
+                    exit;
+                }
+            }
+        
+        require('view/addPost.php');
+    }
+}
+ elseif (isset($_GET['action']) && $_GET['action'] == 'edit') {
     
     if(isset($_SESSION['pseudo'])) {
         //if(isset($_POST['title']) && isset($_POST['content']) && isset($_POST['post_id']) && !empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['post_id']) ) {
@@ -73,7 +90,7 @@ if (isset($_GET['billet']) && $_GET['billet'] > 0) {
         return;
     }
 
-    header('Location : http://localhost/o_project_c/blog_whriter-master/view/connection.php');
+    header('Location : http://localhost/projet4_2/view/connection.php');
 } elseif (empty($_SERVER['QUERY_STRING'])) {
 
     $db = $LastManager->__construct($credentials);

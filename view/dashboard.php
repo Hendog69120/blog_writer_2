@@ -51,8 +51,8 @@
         </form>
     <?php endforeach; ?>
 </div>
-<div>
-    <p><a href="http://localhost/projet4_2/view/admin.php">Poster un article</a></p>
+<div style="margin-top:50px;">
+    <p> <a href="index.php?action=addPost">Poster un article</a></p>
 </div>
 <?php include("view/footer.php"); ?>
 </body>
